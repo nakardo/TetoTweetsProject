@@ -19,5 +19,24 @@ android {
     defaultConfig {
         minSdkVersion 7
         targetSdkVersion 16
+        versionCode 1
+    }
+
+    buildTypes {
+        release {
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    productFlavors {
+        free {
+            packageName 'com.example.tetotweets.free'
+        }
+
+        paid {
+            packageName 'com.example.tetotweets.paid'
+            versionCode 2
+        }
     }
 }

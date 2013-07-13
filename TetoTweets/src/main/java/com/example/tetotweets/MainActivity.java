@@ -1,8 +1,8 @@
 package com.example.tetotweets;
 
-import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AbsListView;
@@ -19,7 +19,7 @@ import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
 import twitter4j.conf.ConfigurationBuilder;
 
-public class MainActivity extends Activity {
+public class MainActivity extends FragmentActivity {
     private ProgressBar mProgressBar;
     private ListView mListView;
 
@@ -43,12 +43,12 @@ public class MainActivity extends Activity {
             public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
                 boolean isLastRowVisible = firstVisibleItem + visibleItemCount >= totalItemCount;
                 if (totalItemCount > 0 && isLastRowVisible && !isRequestingData) {
-                    mCurrentPage++; getUserTimeline();
+                    mCurrentPage++; new GetUserTimelineAsyncTask().execute();
                 }
             }
         });
 
-        getUserTimeline();
+        new GetUserTimelineAsyncTask().execute();
     }
 
     @Override
@@ -58,30 +58,34 @@ public class MainActivity extends Activity {
         return true;
     }
 
-    private void getUserTimeline() {
-        isRequestingData = true;
-        new GetUserTimelineAsyncTask().execute("nakardo", new Integer(mCurrentPage));
-    }
-
     private void onUserTimelineLoaded(List<Status> statuses) {
+        Log.d("Loaded " + statuses.size() + " tweets");
+
         if (mListAdapter == null) {
             mListAdapter = new TweetsListAdapter(this, statuses);
             mListView.setAdapter(mListAdapter);
         } else {
             mListAdapter.addAll(statuses);
             mListAdapter.notifyDataSetChanged();
+
+            if (!Settings.isPaidVersion()) {
+                new MotivationalDialog().show(getSupportFragmentManager(), "motivational_dialog");
+            }
         }
 
         mProgressBar.setVisibility(View.GONE);
         mListView.setVisibility(View.VISIBLE);
-
-        isRequestingData = false;
     }
 
-    private class GetUserTimelineAsyncTask extends AsyncTask<Object, Void, List<Status>> {
+    private class GetUserTimelineAsyncTask extends AsyncTask<Void, Void, List<Status>> {
 
         @Override
-        protected List<twitter4j.Status> doInBackground(Object... params) {
+        protected void onPreExecute() {
+            super.onPreExecute(); isRequestingData = true;
+        }
+
+        @Override
+        protected List<twitter4j.Status> doInBackground(Void... params) {
             ConfigurationBuilder cb = new ConfigurationBuilder();
             cb.setDebugEnabled(true)
                     .setOAuthConsumerKey("6QaN7v6SsctEaeNTUBTGA")
@@ -93,8 +97,7 @@ public class MainActivity extends Activity {
 
             List<twitter4j.Status> statuses = null;
             try {
-                int page = ((Integer) params[1]).intValue();
-                statuses = twitter.getUserTimeline((String) params[0], new Paging(page));
+                statuses = twitter.getUserTimeline("tetomedinaok", new Paging(mCurrentPage));
             } catch (TwitterException e) {
                 e.printStackTrace();
             }
@@ -104,8 +107,8 @@ public class MainActivity extends Activity {
 
         @Override
         protected void onPostExecute(List<twitter4j.Status> statuses) {
-            super.onPostExecute(statuses);
-            MainActivity.this.onUserTimelineLoaded(statuses);
+            super.onPostExecute(statuses); isRequestingData = false;
+            onUserTimelineLoaded(statuses);
         }
     }
 }

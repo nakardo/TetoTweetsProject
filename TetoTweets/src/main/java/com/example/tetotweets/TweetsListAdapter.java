@@ -5,7 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -31,6 +34,10 @@ public class TweetsListAdapter extends ArrayAdapter<Status> {
 
         TextView contextTextView = (TextView) convertView.findViewById(android.R.id.text2);
         contextTextView.setText(getItem(position).getText());
+
+        ImageView avatarImageView = (ImageView) convertView.findViewById(android.R.id.icon);
+        Picasso.with(getContext()).load(getItem(position).getUser().getProfileImageURL())
+                .into(avatarImageView);
 
         return convertView;
     }

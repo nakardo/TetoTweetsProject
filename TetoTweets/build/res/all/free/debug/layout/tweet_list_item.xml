@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:minHeight="44dp"
+        android:padding="10dp" >
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical" >
+
+        <ImageView android:id="@android:id/icon"
+                   android:layout_marginRight="10dp"
+                   android:layout_width="44dp"
+                   android:layout_height="44dp"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:textStyle="bold"
+                android:layout_toRightOf="@android:id/icon"
+                android:id="@android:id/text1" />
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text New Text New Text New Text New Text New Text New Text New Text"
+                android:layout_toRightOf="@android:id/icon"
+                android:layout_below="@android:id/text1"
+                android:id="@android:id/text2" />
+    </RelativeLayout>
+</FrameLayout><!-- From: /Users/dacosta/Projects/TetoTweetsProject/TetoTweets/src/main/res/layout/tweet_list_item.xml -->
