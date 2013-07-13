@@ -65,7 +65,7 @@ public class MainActivity extends FragmentActivity {
             mListAdapter = new TweetsListAdapter(this, statuses);
             mListView.setAdapter(mListAdapter);
         } else {
-            mListAdapter.addAll(statuses);
+            for (Status status : statuses) mListAdapter.add(status);
             mListAdapter.notifyDataSetChanged();
 
             if (!Settings.isPaidVersion()) {
@@ -97,7 +97,8 @@ public class MainActivity extends FragmentActivity {
 
             List<twitter4j.Status> statuses = null;
             try {
-                statuses = twitter.getUserTimeline("tetomedinaok", new Paging(mCurrentPage));
+                statuses = twitter.getUserTimeline(getString(R.string.username), new Paging(mCurrentPage));
+                get
             } catch (TwitterException e) {
                 e.printStackTrace();
             }

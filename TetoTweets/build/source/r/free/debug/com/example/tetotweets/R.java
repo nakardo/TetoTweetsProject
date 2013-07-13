@@ -40,6 +40,9 @@ public final class R {
         /**  From: /Users/dacosta/Projects/TetoTweetsProject/TetoTweets/src/free/res/values/strings.xml 
          */
         public static final int app_name=0x7f050001;
+        /**  From: /Users/dacosta/Projects/TetoTweetsProject/TetoTweets/src/main/res/values/strings.xml 
+         */
+        public static final int username=0x7f050002;
     }
     public static final class style {
         /**  From: /Users/dacosta/Projects/TetoTweetsProject/TetoTweets/src/main/res/values/styles.xml 

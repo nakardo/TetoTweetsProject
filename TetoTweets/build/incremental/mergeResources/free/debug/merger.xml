@@ -61,6 +61,8 @@
                 qualifiers="" >
                 <string name="action_settings" >Settings
                 </string>
+                <string name="username" >tetomedinaok
+                </string>
             </file>
             <file
                 path="/Users/dacosta/Projects/TetoTweetsProject/TetoTweets/src/main/res/values/styles.xml"
