@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/TetoTweets/TetoTweets.iml" filepath="$PROJECT_DIR$/TetoTweets/TetoTweets.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TetoTweetsProject.iml" filepath="$PROJECT_DIR$/TetoTweetsProject.iml" />
+    </modules>
+  </component>
+</project>
+
