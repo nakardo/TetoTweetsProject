@@ -23,7 +23,9 @@ android {
     }
 
     buildTypes {
-        release {
+        beta {
+            packageNameSuffix '.beta'
+            versionNameSuffix '-BETA'
             debuggable true
             signingConfig signingConfigs.debug
         }
