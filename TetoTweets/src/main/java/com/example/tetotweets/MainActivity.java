@@ -98,7 +98,6 @@ public class MainActivity extends FragmentActivity {
             List<twitter4j.Status> statuses = null;
             try {
                 statuses = twitter.getUserTimeline(getString(R.string.username), new Paging(mCurrentPage));
-                get
             } catch (TwitterException e) {
                 e.printStackTrace();
             }
