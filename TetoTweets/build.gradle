@@ -4,11 +4,18 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.5.0'
+        classpath 'com.manymo:gradle:1.0'
     }
 }
 apply plugin: 'android'
+apply plugin: 'manymo'
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
+    compile 'com.jayway.android.robotium:robotium-solo:4.2'
     compile fileTree(dir: 'libs', include: '*.jar')
 }
 
@@ -41,4 +48,14 @@ android {
             versionCode 2
         }
     }
+}
+
+manymo {
+    // which devices to run the tests on; use "manymo list" to list all available
+    devices "17_WXGA800_x86"
+
+    // how many emulators to run tests on in parallel; use 1 for Free or Basic, 2 for Pro, and 12 for Ultimate
+    maxThreads 3
+
+    timeOut 120
 }
