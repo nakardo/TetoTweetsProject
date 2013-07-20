@@ -56,11 +56,30 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/aidl" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/assets" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/jni" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/res" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/instrumentTest/resources" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/build/source/buildConfig/free/beta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/rs" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/source/rs/free/beta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/source/aidl/free/beta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/source/r/free/beta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/res" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/assets" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/build/res/rs/free/beta" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/jni" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/free/aidl" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/resources" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/res" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/assets" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/jni" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/instrumentTestFree/rs" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/apk" />
       <excludeFolder url="file://$MODULE_DIR$/build/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/bundles" />
@@ -73,7 +92,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/symbols" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android 4.2.2" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android 4.2.2 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="robotium-solo-4.2" level="project" />
     <orderEntry type="library" name="android-support-v4" level="project" />
