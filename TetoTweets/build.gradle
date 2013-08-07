@@ -3,12 +3,16 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.0'
-        classpath 'com.manymo:gradle:1.0'
+        classpath 'com.android.tools.build:gradle:0.5.4'
+        classpath 'com.manymo:gradle:1.1'
+
+        classpath 'com.sun.jersey:jersey-core:1.8'
+        classpath 'com.appthwack:gradle:1.0'
     }
 }
 apply plugin: 'android'
 apply plugin: 'manymo'
+apply plugin: 'appthwack'
 
 repositories {
     mavenCentral()
@@ -58,4 +62,11 @@ manymo {
     maxThreads 3
 
     timeOut 120
+}
+
+appthwack {
+    apiKey='6uEYwnoDo2NeUl6G1ZNHn9GuAVGzK55bbrTBqcul'
+    type='junit'
+    project='TetoTweets'
+    devicePool='Top 25'
 }
