@@ -68,5 +68,5 @@ appthwack {
     apiKey='6uEYwnoDo2NeUl6G1ZNHn9GuAVGzK55bbrTBqcul'
     type='junit'
     project='TetoTweets'
-    devicePool='Top 25'
+    devicePool='Top 10 devices'
 }
