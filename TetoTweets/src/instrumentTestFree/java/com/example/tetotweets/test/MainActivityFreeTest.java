@@ -37,6 +37,8 @@ public class MainActivityFreeTest extends ActivityInstrumentationTestCase2<MainA
             }
         }, 5000);
 
+        mSolo.takeScreenshot();
+
         assertTrue("Failed to load initial 20 tweets", isVisible);
         mSolo.scrollListToBottom(listView);
 
@@ -46,6 +48,8 @@ public class MainActivityFreeTest extends ActivityInstrumentationTestCase2<MainA
                 return listView.getAdapter().getCount() == 40;
             }
         }, 5000);
+
+        mSolo.takeScreenshot();
 
         assertTrue("Failed to load another page", hasLoadedAnotherPage);
 
