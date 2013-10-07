@@ -65,7 +65,7 @@ manymo {
 }
 
 appthwack {
-    apiKey='6uEYwnoDo2NeUl6G1ZNHn9GuAVGzK55bbrTBqcul'
+    apiKey='fSc2QNwzFpWYsMpcrNB4jxdlT4zycairK0Vu1Tcw'
     type='junit'
     project='TetoTweets'
     devicePool='Top 10 devices'
